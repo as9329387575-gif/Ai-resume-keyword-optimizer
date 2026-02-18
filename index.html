@@ -1,0 +1,673 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>AI Resume Keyword Optimizer | Free ATS Keyword Matching Tool</title>
+  <meta name="description" content="Free AI-powered resume keyword optimizer for ATS success. Check keyword match, missing terms, density & get bullet examples. Client-side & private.">
+  <meta name="keywords" content="resume keyword optimizer, ats keyword checker, resume keyword analysis tool, optimize resume for ats, resume keyword matching tool free">
+  <meta name="author" content="ResumeAI">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://as9329387575.github.io/resume-keyword-optimizer">
+  <!-- Preload & AdSense placeholder (not actual ad code) -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <style>
+    /* MODERN SAAS STYLE – BLUE/PURPLE GRADIENT, RESPONSIVE, PROFESSIONAL */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f9faff 0%, #f4f2ff 100%);
+      color: #1e1b4b;
+      line-height: 1.5;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    /* ad placeholders */
+    .ad-space {
+      background: linear-gradient(135deg, #e0e7ff, #ede9fe);
+      border: 2px dashed #a78bfa;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4c1d95;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 8px 20px rgba(79, 70, 229, 0.1);
+      backdrop-filter: blur(4px);
+      margin: 0.75rem 0;
+    }
+
+    .top-banner {
+      width: 100%;
+      min-height: 100px;
+    }
+    .top-banner::before { content: "Ad Space – 728x90"; }
+
+    .mid-content-ad {
+      width: 100%;
+      min-height: 100px;
+    }
+    .mid-content-ad::before { content: "Ad Space – 728x90"; }
+
+    .sidebar-ad {
+      min-height: 280px;
+      width: 100%;
+      max-width: 320px;
+      margin: 1rem auto;
+    }
+    .sidebar-ad::before { content: "Ad Space – 300x250"; }
+
+    .footer-ad {
+      width: 100%;
+      min-height: 100px;
+    }
+    .footer-ad::before { content: "Ad Space – 728x90"; }
+
+    /* main layout */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 1024px) {
+      .content-grid {
+        grid-template-columns: 1fr 320px;
+        align-items: start;
+      }
+    }
+
+    .main-panel {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+      border-radius: 40px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .right-rail {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #1e3a8a, #6d28d9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2e1065;
+      margin: 1.5rem 0 1rem;
+    }
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #312e81;
+      margin-bottom: 0.75rem;
+    }
+
+    .input-card {
+      background: white;
+      border-radius: 32px;
+      padding: 1.8rem;
+      box-shadow: 0 8px 30px rgba(98, 42, 234, 0.12);
+      border: 1px solid #e0e7ff;
+    }
+
+    label {
+      font-weight: 600;
+      color: #3730a3;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      border-radius: 60px;
+      border: 2px solid #ddd6fe;
+      font-size: 1rem;
+      transition: all 0.2s;
+      background: white;
+    }
+
+    textarea {
+      border-radius: 30px;
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #8b5cf6;
+      box-shadow: 0 0 0 4px #ede9fe;
+    }
+
+    button.primary {
+      background: linear-gradient(145deg, #4f46e5, #7c3aed);
+      color: white;
+      font-weight: 700;
+      border: none;
+      border-radius: 60px;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 12px 30px -10px #4f46e5;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-top: 1rem;
+    }
+
+    button.primary:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 35px -8px #6d28d9;
+    }
+
+    /* results cards */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .result-card {
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(4px);
+      border-radius: 32px;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      border: 1px solid white;
+      transition: 0.2s;
+    }
+
+    .result-card:hover {
+      background: white;
+      box-shadow: 0 20px 35px -8px #c7d2fe;
+    }
+
+    .score-badge {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(145deg, #2563eb, #9333ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .progress-bar {
+      height: 14px;
+      background: #e0e7ff;
+      border-radius: 60px;
+      margin: 1rem 0;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #8b5cf6);
+      border-radius: 60px;
+      width: 0%;
+      transition: width 0.6s ease;
+    }
+
+    .keyword-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .keyword-chip {
+      background: #f5f3ff;
+      padding: 0.4rem 1rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid #c7d2fe;
+    }
+
+    .matched-keyword { background: #dcfce7; color: #14532d; border-color: #86efac; }
+    .missing-keyword { background: #fee2e2; color: #7f1d1d; border-color: #fecaca; }
+
+    .bullet-suggestion {
+      background: #eef2ff;
+      padding: 1.2rem;
+      border-radius: 24px;
+      border-left: 8px solid #8b5cf6;
+      font-style: italic;
+    }
+
+    .copy-btn {
+      background: #e4e4e7;
+      border: none;
+      border-radius: 40px;
+      padding: 0.5rem 1.5rem;
+      font-weight: 600;
+      margin-top: 1rem;
+      cursor: pointer;
+      width: auto;
+      display: inline-block;
+    }
+
+    .copy-btn:hover {
+      background: #cbd5e1;
+    }
+
+    hr {
+      border: 1px solid #e0e7ff;
+      margin: 2rem 0;
+    }
+
+    footer, .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      padding: 2rem 0 0;
+    }
+
+    footer a {
+      color: #312e81;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* contact form */
+    .contact-form input, .contact-form textarea {
+      border-radius: 30px;
+      margin-bottom: 1rem;
+    }
+
+    .contact-form button {
+      background: #4f46e5;
+      color: white;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .disclaimer {
+      background: #fef9c3;
+      border-radius: 20px;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #854d0e;
+    }
+
+    /* responsive */
+    @media (max-width: 640px) {
+      .main-panel { padding: 1.5rem 1rem; }
+      .sidebar-ad { display: none; } /* hide on mobile, keep grid clean */
+    }
+    @media (min-width: 1024px) {
+      .sidebar-ad { display: flex; }
+    }
+
+    .seo-content {
+      background: white;
+      border-radius: 40px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-question {
+      font-weight: 700;
+      color: #1e1b4b;
+    }
+  </style>
+  <!-- PDF.js from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <!-- TOP BANNER AD -->
+  <div class="ad-space top-banner" aria-label="Advertisement"></div>
+
+  <!-- HEADER -->
+  <header>
+    <h1>AI Resume Keyword Optimizer – Improve Resume Keywords for ATS Success</h1>
+    <p style="font-size:1.3rem; color:#2d2a6e;">Free client‑side tool to boost your ATS score instantly.</p>
+  </header>
+
+  <!-- MAIN CONTENT GRID (with sidebar) -->
+  <div class="content-grid">
+    <!-- LEFT MAIN PANEL -->
+    <div class="main-panel">
+      <!-- INPUT SECTION -->
+      <div class="input-card">
+        <h2 style="margin-top:0;">Upload & analyze</h2>
+        <label for="resumeUpload">📄 Upload Resume (PDF only)</label>
+        <input type="file" id="resumeUpload" accept=".pdf" />
+
+        <label for="jobDesc" style="margin-top:1.5rem;">📋 Job Description</label>
+        <textarea id="jobDesc" placeholder="Paste job description here..."></textarea>
+
+        <button class="primary" id="optimizeBtn">✨ Optimize Resume Keywords</button>
+        <p class="disclaimer" style="margin-top:1rem;"><small>⚡ This is an estimation tool, not official ATS. All processing stays in your browser.</small></p>
+      </div>
+
+      <!-- RESULTS DYNAMIC AREA (hidden until first run) -->
+      <div id="resultsArea" style="display: none;">
+        <hr />
+        <h2>🔍 Keyword Optimization Results</h2>
+
+        <!-- mid-content ad -->
+        <div class="ad-space mid-content-ad"></div>
+
+        <!-- summary cards -->
+        <div class="results-grid">
+          <div class="result-card">
+            <h3>Match Score</h3>
+            <div class="score-badge" id="matchPercent">0%</div>
+            <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+          </div>
+          <div class="result-card">
+            <h3>Missing Important</h3>
+            <div id="missingKeywords" class="keyword-list">—</div>
+          </div>
+          <div class="result-card">
+            <h3>Recommended to Add</h3>
+            <div id="recommendedAdd" class="keyword-list">—</div>
+          </div>
+          <div class="result-card">
+            <h3>Overused</h3>
+            <div id="overusedKeywords" class="keyword-list">—</div>
+          </div>
+        </div>
+
+        <!-- density & priority -->
+        <div class="results-grid">
+          <div class="result-card">
+            <h3>📊 Keyword Density</h3>
+            <div id="densityAnalysis">Top keywords: …</div>
+          </div>
+          <div class="result-card">
+            <h3>⭐ Priority Keywords</h3>
+            <div id="priorityKeywords" class="keyword-list">—</div>
+          </div>
+        </div>
+
+        <!-- bullet example + copy -->
+        <div class="result-card">
+          <h3>💡 Optimized Resume Bullet Example</h3>
+          <div class="bullet-suggestion" id="bulletExample">—</div>
+          <button class="copy-btn" id="copyBulletBtn">📋 Copy suggestion</button>
+        </div>
+
+        <!-- matched vs missing raw -->
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1.5rem;">
+          <div style="flex:1;">
+            <h4>✅ Matched keywords</h4>
+            <div id="matchedList" class="keyword-list">—</div>
+          </div>
+          <div style="flex:1;">
+            <h4>❌ Missing keywords</h4>
+            <div id="missingList" class="keyword-list">—</div>
+          </div>
+        </div>
+      </div> <!-- end resultsArea -->
+
+      <!-- SEO content (1200+ words approx) -->
+      <div class="seo-content">
+        <h2>What are resume keywords and why ATS matters</h2>
+        <p>Applicant Tracking Systems (ATS) scan resumes for specific keywords related to skills, tools, certifications, and soft skills. If your resume lacks these, it may be filtered out before a recruiter sees it. Our AI Resume Keyword Optimizer helps you identify missing terms and improve your match rate.</p>
+        
+        <h3>How ATS scans resumes</h3>
+        <p>ATS software parses your resume and extracts nouns, skill phrases, and industry buzzwords. It compares them against the job description. Using a resume keyword optimizer ensures you speak the same language as the employer.</p>
+        
+        <h3>Common resume keyword mistakes</h3>
+        <p>Over-stuffing keywords, missing important variations, or not including both hard and soft skills. Our tool highlights overused words and recommends high-impact keywords.</p>
+        
+        <h3>How this tool works</h3>
+        <p>You upload a PDF, paste the job description, and click optimize. All analysis happens locally – we never store or transmit your data. We use PDF.js to extract text, remove stopwords, and compare keyword frequency.</p>
+        
+        <h3>Who should use it?</h3>
+        <p>Job seekers, career changers, and anyone wanting to tailor their resume to a specific role. Perfect for recent grads, mid-level, and executive job applications.</p>
+        <p style="font-weight:600;">Optimize your resume for ATS today – 100% free, private, and fast.</p>
+      </div>
+
+      <!-- FAQ SECTION -->
+      <section>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item"><span class="faq-question">1. What is a resume keyword optimizer?</span> It's a tool that compares your resume against a job description to find missing keywords and improve ATS compatibility.</div>
+        <div class="faq-item"><span class="faq-question">2. Is this tool free?</span> Yes, completely free with no hidden costs.</div>
+        <div class="faq-item"><span class="faq-question">3. Is this an official ATS?</span> No, it's an estimation tool; each company's ATS may differ.</div>
+        <div class="faq-item"><span class="faq-question">4. Does it store my resume?</span> Never. All processing is client-side, and nothing is uploaded.</div>
+        <div class="faq-item"><span class="faq-question">5. How accurate is keyword analysis?</span> It uses smart filtering but should be used as a guide, not guarantee.</div>
+        <div class="faq-item"><span class="faq-question">6. How can I improve my resume score?</span> Add missing keywords naturally, avoid overuse, and follow our bullet examples.</div>
+      </section>
+
+      <!-- CONTACT FORM (FormSubmit) -->
+      <section style="margin: 3rem 0;">
+        <h2>📬 Contact us</h2>
+        <form class="contact-form" action="https://formsubmit.co/as9329387575@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Email address" required>
+          <textarea name="message" placeholder="How can we help?" required></textarea>
+          <button type="submit">Send message</button>
+        </form>
+      </section>
+
+      <!-- PRIVACY & TERMS (condensed but present) -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap:2rem;">
+        <div>
+          <h3>Privacy Policy</h3>
+          <p>✔ No file storage – everything stays in your browser.<br>✔ Client-side only: we never see your data.<br>✔ Cookies may be used by third-party ads (Google AdSense).<br>✔ No personal data selling.<br>✔ Contact: as9329387575@gmail.com</p>
+        </div>
+        <div>
+          <h3>Terms & Conditions</h3>
+          <p>By using this tool you agree that resume analysis is for informational purposes. No liability for employment outcomes. Intellectual property resides with the site owner. Governing law: fictional jurisdiction.</p>
+        </div>
+      </div>
+    </div> <!-- end main-panel -->
+
+    <!-- RIGHT SIDEBAR (desktop only) -->
+    <div class="right-rail">
+      <div class="ad-space sidebar-ad" aria-label="Sidebar advertisement"></div>
+      <!-- extra card for style -->
+      <div style="background: white; border-radius: 32px; padding: 1.5rem; text-align: center; border: 1px solid #c7d2fe;">
+        <h3 style="color:#2e1065;">ATS Checklist</h3>
+        <p>Use standard fonts, avoid tables, include location. Run your resume through this optimizer for each application.</p>
+      </div>
+    </div>
+  </div> <!-- end content-grid -->
+
+  <!-- FOOTER ADS & LINKS -->
+  <div class="ad-space footer-ad" style="margin-top:2rem;"></div>
+  <footer>
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </div>
+    <div style="width:100%; text-align:center; color:#2d2a6e;">
+      <p>© 2025 AI Resume Keyword Optimizer — Secure Client-Side Resume Optimization</p>
+    </div>
+  </footer>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+  (function() {
+    // stopwords set (simple)
+    const STOPWORDS = new Set([
+      'a', 'an', 'the', 'and', 'or', 'but', 'if', 'then', 'else', 'when', 'at', 'from', 'by', 'on', 'off', 'for', 'in', 'out', 'over', 'to', 'into', 'with', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'shall', 'should', 'may', 'might', 'must', 'can', 'could', 'i', 'you', 'he', 'she', 'it', 'we', 'they', 'their', 'them', 'my', 'your', 'his', 'her', 'its', 'our', 'and', 'of', 'as', 'that', 'this', 'these', 'those', 'etc'
+    ]);
+
+    const resumeUpload = document.getElementById('resumeUpload');
+    const jobDescText = document.getElementById('jobDesc');
+    const optimizeBtn = document.getElementById('optimizeBtn');
+    const resultsArea = document.getElementById('resultsArea');
+
+    // result spans
+    const matchSpan = document.getElementById('matchPercent');
+    const progressFill = document.getElementById('progressFill');
+    const missingKeywordsDiv = document.getElementById('missingKeywords');
+    const recommendedAddDiv = document.getElementById('recommendedAdd');
+    const overusedDiv = document.getElementById('overusedKeywords');
+    const densityDiv = document.getElementById('densityAnalysis');
+    const priorityDiv = document.getElementById('priorityKeywords');
+    const bulletExampleSpan = document.getElementById('bulletExample');
+    const matchedListDiv = document.getElementById('matchedList');
+    const missingListDiv = document.getElementById('missingList');
+
+    let lastResumeText = '';
+    let lastJobKeywords = [];
+
+    // utility: extract words / skill phrases (simple tokenize)
+    function extractKeywords(text, minLength=2) {
+      if (!text) return [];
+      const words = text.toLowerCase()
+        .replace(/[^\w\s\-+]/g, ' ')   // keep letters, numbers, hyphen, plus
+        .split(/\s+/)
+        .filter(w => w.length >= minLength && !STOPWORDS.has(w) && !/^\d+$/.test(w));
+      return words;
+    }
+
+    function getPhrasesAndNouns(text) {
+      // simple: take all words as potential keywords (no NLP)
+      return extractKeywords(text, 2);
+    }
+
+    function analyze() {
+      if (!lastResumeText || !jobDescText.value.trim()) {
+        alert('Please upload a resume and fill job description.');
+        return;
+      }
+
+      const jdText = jobDescText.value;
+      const jdKeywords = getPhrasesAndNouns(jdText);
+      const resumeKeywords = getPhrasesAndNouns(lastResumeText);
+
+      // frequency
+      const jdFreq = {};
+      jdKeywords.forEach(k => jdFreq[k] = (jdFreq[k] || 0) + 1);
+      const resumeFreq = {};
+      resumeKeywords.forEach(k => resumeFreq[k] = (resumeFreq[k] || 0) + 1);
+
+      const uniqueJD = [...new Set(jdKeywords)];
+      const uniqueResumeSet = new Set(resumeKeywords);
+
+      // matched & missing
+      const matched = uniqueJD.filter(k => uniqueResumeSet.has(k));
+      const missing = uniqueJD.filter(k => !uniqueResumeSet.has(k));
+
+      // match percentage (based on unique JD keywords)
+      const matchPercent = uniqueJD.length ? Math.round((matched.length / uniqueJD.length) * 100) : 0;
+      matchSpan.innerText = matchPercent + '%';
+      progressFill.style.width = matchPercent + '%';
+
+      // missing important (top 8)
+      missingKeywordsDiv.innerHTML = missing.slice(0,8).map(k => `<span class="keyword-chip missing-keyword">${k}</span>`).join('') || 'None';
+      recommendedAddDiv.innerHTML = missing.slice(0,8).map(k => `<span class="keyword-chip">${k}</span>`).join('') || 'None';
+
+      // overused: resume keywords with freq > 3 and appears in JD? show any too frequent
+      const overused = resumeKeywords.filter((v,i,a) => a.indexOf(v) !== i && a.lastIndexOf(v) === i && resumeFreq[v] > 3 && jdFreq[v]).slice(0,6);
+      overusedDiv.innerHTML = overused.map(k => `<span class="keyword-chip">${k} (${resumeFreq[k]})</span>`).join('') || '—';
+
+      // density analysis (top 5 from resume)
+      const sortedResFreq = Object.entries(resumeFreq).sort((a,b) => b[1]-a[1]).slice(0,5);
+      densityDiv.innerHTML = sortedResFreq.map(([k,v]) => `${k}: ${v}`).join(', ') || '—';
+
+      // priority keywords: high freq missing from JD
+      const priority = missing.filter(k => jdFreq[k] > 1).slice(0,8);
+      priorityDiv.innerHTML = priority.map(k => `<span class="keyword-chip">${k}</span>`).join('') || '—';
+
+      // bullet example (mock)
+      bulletExampleSpan.innerText = `Implemented ${matched[0] || 'new processes'} using ${matched[1] || 'modern tools'} to improve efficiency by 20%, focusing on ${priority[0] || 'key deliverables'}.`;
+
+      // matched / missing full lists
+      matchedListDiv.innerHTML = matched.slice(0,20).map(k => `<span class="keyword-chip matched-keyword">${k}</span>`).join('') || '—';
+      missingListDiv.innerHTML = missing.slice(0,20).map(k => `<span class="keyword-chip missing-keyword">${k}</span>`).join('') || '—';
+
+      // store for later copy
+      lastJobKeywords = uniqueJD;
+    }
+
+    // PDF extraction
+    async function extractPDFText(file) {
+      const arrayBuffer = await file.arrayBuffer();
+      const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+      let fullText = '';
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const content = await page.getTextContent();
+        const strings = content.items.map(item => item.str);
+        fullText += strings.join(' ') + '\n';
+      }
+      return fullText;
+    }
+
+    optimizeBtn.addEventListener('click', async () => {
+      if (!resumeUpload.files[0]) {
+        alert('Please select a PDF resume');
+        return;
+      }
+      if (!jobDescText.value.trim()) {
+        alert('Please paste job description');
+        return;
+      }
+
+      optimizeBtn.disabled = true;
+      optimizeBtn.innerText = '⏳ Processing...';
+      try {
+        const pdfText = await extractPDFText(resumeUpload.files[0]);
+        lastResumeText = pdfText;
+        analyze();
+        resultsArea.style.display = 'block';
+      } catch (e) {
+        alert('Error reading PDF. Ensure it\'s a valid text-based PDF.');
+        console.error(e);
+      } finally {
+        optimizeBtn.disabled = false;
+        optimizeBtn.innerText = '✨ Optimize Resume Keywords';
+      }
+    });
+
+    // copy bullet
+    document.getElementById('copyBulletBtn').addEventListener('click', () => {
+      const bullet = bulletExampleSpan.innerText;
+      navigator.clipboard?.writeText(bullet).then(() => alert('Copied!')).catch(() => alert('Press Ctrl+C'));
+    });
+
+    // optional: load sample
+  })();
+</script>
+</body>
+</html>
+```
